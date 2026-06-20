@@ -1,48 +1,71 @@
-🌿 Plant Disease Detection
+# 🌿 Plant Disease Detection
+
 An AI-powered system that detects and classifies plant diseases from leaf images using deep learning. Upload an image of a plant leaf, and the model will identify the disease — helping farmers and agronomists take timely action.
+
 ---
-📌 Table of Contents
-Overview
-Features
-Demo
-Tech Stack
-Dataset
-Model Architecture
-Project Structure
-Getting Started
-Usage
-Results
-Contributing
-License
+
+## 📌 Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Demo](#demo)
+- [Tech Stack](#tech-stack)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
+
 ---
-🧠 Overview
-Plant diseases are a major threat to food security worldwide. Early and accurate detection can significantly reduce crop losses. This project uses a Convolutional Neural Network (CNN) trained on thousands of leaf images to automatically classify diseases in plants such as Tomato, Potato, Pepper, Corn, Apple, and more.
+
+## 🧠 Overview
+
+Plant diseases are a major threat to food security worldwide. Early and accurate detection can significantly reduce crop losses. This project uses a **Convolutional Neural Network (CNN)** trained on thousands of leaf images to automatically classify diseases in plants such as **Tomato**, **Potato**, **Pepper**, **Corn**, **Apple**, and more.
+
 ---
-✨ Features
-🔍 Detects 30+ plant diseases across multiple crop types
-🌱 Identifies healthy vs. diseased plant leaves
-📷 Accepts real-time image uploads
-📊 Returns disease name with confidence score
-🌐 Web interface for easy interaction
-⚡ Fast inference powered by deep learning
+
+## ✨ Features
+
+- 🔍 Detects 30+ plant diseases across multiple crop types
+- 🌱 Identifies healthy vs. diseased plant leaves
+- 📷 Accepts real-time image uploads
+- 📊 Returns disease name with confidence score
+- 🌐 Web interface for easy interaction
+- ⚡ Fast inference powered by deep learning
+
 ---
-🎥 Demo
+
+## 🎥 Demo
+
 > Upload a leaf image and get instant disease classification.
-(Add a screenshot or GIF of your app here)
+
+*(Add a screenshot or GIF of your app here)*
+
 ---
-🛠️ Tech Stack
-Layer	Technology
-Language	Python 3.x
-Deep Learning	TensorFlow / Keras or PyTorch
-Model	CNN (e.g., ResNet, VGG, or custom)
-Web Framework	Flask / FastAPI / Streamlit
-Frontend	HTML, CSS, JavaScript (or React)
-Dataset	PlantVillage Dataset (via Kaggle)
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Language | Python 3.x |
+| Deep Learning | TensorFlow / Keras or PyTorch |
+| Model | CNN (e.g., ResNet, VGG, or custom) |
+| Web Framework | Flask / FastAPI / Streamlit |
+| Frontend | HTML, CSS, JavaScript (or React) |
+| Dataset | PlantVillage Dataset (via Kaggle) |
+
 ---
-📂 Dataset
-This project uses the PlantVillage Dataset, which contains 54,305 images of plant leaves covering 38 disease classes across 14 crop species.
-📥 Download: Kaggle - PlantVillage Dataset
-Classes include: Healthy, Early Blight, Late Blight, Leaf Mold, Bacterial Spot, and many more.
+
+## 📂 Dataset
+
+This project uses the **PlantVillage Dataset**, which contains **54,305 images** of plant leaves covering **38 disease classes** across 14 crop species.
+
+- 📥 Download: [Kaggle - PlantVillage Dataset](https://www.kaggle.com/datasets/emmarex/plantdisease)
+- Classes include: Healthy, Early Blight, Late Blight, Leaf Mold, Bacterial Spot, and many more.
+
 After downloading, place the dataset in:
 ```
 data/
@@ -52,17 +75,25 @@ data/
     ├── Potato_Late_blight/
     └── ...
 ```
+
 ---
-🧬 Model Architecture
-The model is a Convolutional Neural Network built with the following structure:
-Input: RGB image (224×224)
-Convolutional + MaxPooling layers
-Batch Normalization + Dropout for regularization
-Dense layers with ReLU activation
-Output: Softmax (multi-class classification)
+
+## 🧬 Model Architecture
+
+The model is a **Convolutional Neural Network** built with the following structure:
+
+- Input: RGB image (224×224)
+- Convolutional + MaxPooling layers
+- Batch Normalization + Dropout for regularization
+- Dense layers with ReLU activation
+- Output: Softmax (multi-class classification)
+
 > Transfer learning from **ResNet50 / VGG16** pre-trained on ImageNet is used to boost accuracy.
+
 ---
-📁 Project Structure
+
+## 📁 Project Structure
+
 ```
 PlantDiseaseDetection/
 ├── data/                        # Dataset directory
@@ -80,13 +111,19 @@ PlantDiseaseDetection/
 ├── requirements.txt
 └── README.md
 ```
+
 ---
-🚀 Getting Started
-Prerequisites
-Python 3.8+
-pip
-Git
-Installation
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- pip
+- Git
+
+### Installation
+
 ```bash
 # 1. Clone the repository
 git clone https://github.com/Waseetkhan25/PlantDiseaseDetection.git
@@ -99,16 +136,22 @@ source venv/bin/activate        # On Windows: venv\Scripts\activate
 # 3. Install dependencies
 pip install -r requirements.txt
 ```
-Training the Model
+
+### Training the Model
+
 ```bash
 # Open the Jupyter notebook
 jupyter notebook notebooks/PlantDiseaseDetection.ipynb
 ```
+
 Or train via script (if available):
+
 ```bash
 python train.py --epochs 20 --batch_size 32
 ```
-Running the Web App
+
+### Running the Web App
+
 ```bash
 # Flask
 python app/app.py
@@ -116,36 +159,57 @@ python app/app.py
 # OR Streamlit
 streamlit run app/app.py
 ```
+
 Open your browser at `http://localhost:5000` (Flask) or `http://localhost:8501` (Streamlit).
+
 ---
-🖼️ Usage
-Launch the web application.
-Upload a clear image of a plant leaf.
-Click "Detect Disease".
-View the predicted disease name and confidence score.
+
+## 🖼️ Usage
+
+1. Launch the web application.
+2. Upload a clear image of a plant leaf.
+3. Click **"Detect Disease"**.
+4. View the predicted disease name and confidence score.
+
 ---
-📈 Results
-Metric	Value
-Training Accuracy	~98%
-Validation Accuracy	~95%
-Test Accuracy	~94%
-Model Size	~100 MB
-(Update these values with your actual results)
+
+## 📈 Results
+
+| Metric | Value |
+|--------|-------|
+| Training Accuracy | ~98% |
+| Validation Accuracy | ~95% |
+| Test Accuracy | ~94% |
+| Model Size | ~100 MB |
+
+*(Update these values with your actual results)*
+
 ---
-🤝 Contributing
+
+## 🤝 Contributing
+
 Contributions are welcome! Please follow these steps:
-Fork the repository
-Create your feature branch: `git checkout -b feature/your-feature`
-Commit your changes: `git commit -m 'Add your feature'`
-Push to the branch: `git push origin feature/your-feature`
-Open a Pull Request
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add your feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
 ---
-📄 License
-This project is licensed under the MIT License.
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ---
-🙌 Acknowledgements
-PlantVillage Dataset
-TensorFlow / Keras Documentation
-Kaggle for dataset hosting
+
+## 🙌 Acknowledgements
+
+- [PlantVillage Dataset](https://plantvillage.psu.edu/)
+- [TensorFlow / Keras Documentation](https://www.tensorflow.org/)
+- [Kaggle](https://www.kaggle.com/) for dataset hosting
+
 ---
+
 > Made with ❤️ by [Waseetkhan25](https://github.com/Waseetkhan25)
